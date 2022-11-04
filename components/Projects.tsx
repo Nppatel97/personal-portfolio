@@ -51,7 +51,7 @@ export default function Projects({}: Props) {
           </div>
         ))}
       </div>
-      <div className="w-full absolute top-[calc(50%-(350px/2))] bg-green-800/20 left-0 h-[350px] -skew-y-12"></div>
+      <div className="w-full absolute top-[calc(50%-(350px/2))] md:top-[calc(50%-200px)] bg-green-800/20 left-0 h-[350px] md:h-[400px] -skew-y-12"></div>
     </div>
   );
 }
