@@ -2,7 +2,6 @@ import React from "react";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import BackgroundCircles from "./BackgroundCircles";
 import Image from "next/image";
-import profilePic from "../public/profilePic.jpg";
 import Link from "next/link";
 import { PageInfo } from "../typings";
 import { urlFor } from "../sanity";
@@ -37,7 +36,7 @@ export default function Hero({ pageInfo }: Props) {
         />
         <div>
           <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[12px]">
-            {pageInfo.role}
+            {}
           </h2>
           <h1 className="text-5xl lg:6xl font-semibold px-10">
             <span className="mr-3">{text}</span>
