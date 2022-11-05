@@ -4,7 +4,7 @@ const dev = process.env.NODE_ENV !== "production";
 
 export const server = dev
   ? "http://localhost:3000"
-  : `https://${process.env.VERCEL_URL}`;
+  : `https://personal-portfolio-beryl-ten.vercel.app`;
 
 export const fetchExperiences = async () => {
   const res = await fetch(`${server}/api/getExperiences`);
