@@ -4,17 +4,21 @@ import BackgroundCircles from "./BackgroundCircles";
 import Image from "next/image";
 import profilePic from "../public/profilePic.jpg";
 import Link from "next/link";
+import { PageInfo } from "../typings";
+import { urlFor } from "../sanity";
 
-type Props = {};
+type Props = { pageInfo: PageInfo };
 
-export default function Hero({}: Props) {
+export default function Hero({ pageInfo }: Props) {
   const myLoader = () => {
     return `https://photos.app.goo.gl/c57REfpfc7M7EX2b9`;
   };
   const [text, count] = useTypewriter({
     words: [
-      "Hello! I'm Nisarg Patel",
-      "Full-Stack-Lover.js",
+      `Hello! I'm ${pageInfo?.name}`,
+      `ProfileImg ${pageInfo?.profileImg}`,
+      "Full-Stack-Developer.js",
+      "♪ Music Lover",
       "#LifeLongLearner",
     ],
     loop: true,
@@ -25,7 +29,7 @@ export default function Hero({}: Props) {
       <BackgroundCircles />
       <div className="z-10">
         <Image
-          src={profilePic}
+          src={urlFor(pageInfo?.profileImg).url()}
           className="relative rounded-full h-32 w-32 mx-auto"
           alt="Nisarg's Profile Picture"
           width={500}
@@ -33,7 +37,7 @@ export default function Hero({}: Props) {
         />
         <div>
           <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[12px]">
-            Software Engineer
+            {pageInfo.role}
           </h2>
           <h1 className="text-5xl lg:6xl font-semibold px-10">
             <span className="mr-3">{text}</span>

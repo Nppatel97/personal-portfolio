@@ -3,7 +3,10 @@ import { AiOutlinePhone } from "react-icons/ai";
 import { HiOutlineMail } from "react-icons/hi";
 import { GoLocation } from "react-icons/go";
 import { useForm } from "react-hook-form";
-type Props = {};
+import { PageInfo } from "../typings";
+type Props = {
+  pageInfo: PageInfo;
+};
 
 type FormData = {
   name: string;
@@ -12,7 +15,7 @@ type FormData = {
   message: string;
 };
 
-function ContactMe({}: Props) {
+function ContactMe({ pageInfo }: Props) {
   const {
     register,
     handleSubmit,
@@ -34,17 +37,17 @@ function ContactMe({}: Props) {
         <div className="space-y-5">
           <div className="flex items-center space-x-5 justify-center">
             <AiOutlinePhone className="w-7 h-7 text-green-800 animate-pulse" />
-            <p className="text-xl">+1 437-981-0755</p>
+            <p className="text-xl">{pageInfo.cellNumber}</p>
           </div>
 
           <div className="flex items-center space-x-5 justify-center">
             <HiOutlineMail className="w-7 h-7 text-green-800 animate-pulse" />
-            <p className="text-xl">nisarg.patel97@outlook.com</p>
+            <p className="text-xl">{pageInfo.email}</p>
           </div>
 
           <div className="flex items-center space-x-5 justify-center">
             <GoLocation className="w-7 h-7 text-green-800 animate-pulse" />
-            <p className="text-xl">Toronto ON, M3C 0P2</p>
+            <p className="text-xl">{pageInfo.address}</p>
           </div>
         </div>
         <form

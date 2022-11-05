@@ -1,9 +1,14 @@
 import { PageInfo } from "../typings";
 
-export const fetchPageInfos = async () => {
-  const res = await fetch(`${process.env.NEXT_BASE_URL}/api/getPageInfos`);
+const dev = process.env.NODE_ENV !== "production";
+export const server = dev
+  ? "http://localhost:3000"
+  : "https://nisargppatel.com";
+
+export const fetchPageInfo = async () => {
+  const res = await fetch(`${server}/api/getPageInfo`);
   const data = await res.json();
-  const pageInfos: PageInfo = data.pageInfos;
-  console.log(pageInfos);
-  return pageInfos;
+  const pageInfo: PageInfo = data.pageInfo;
+  console.log(pageInfo);
+  return pageInfo;
 };

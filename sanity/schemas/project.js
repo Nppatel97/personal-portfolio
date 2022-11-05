@@ -7,7 +7,7 @@ export default {
       name: "Title",
       title: "Title",
       description: "Title of the project",
-      type: "string",
+      type: "text",
     },
     {
       name: "profileImg",

@@ -2,10 +2,14 @@ import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import aboutPic from "../public/me.jpg";
+import { PageInfo } from "../typings";
+import { urlFor } from "../sanity";
 
-type Props = {};
+type Props = {
+  pageInfo: PageInfo;
+};
 
-export default function About({}: Props) {
+export default function About({ pageInfo }: Props) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -33,7 +37,7 @@ export default function About({}: Props) {
           }}
         >
           <Image
-            src={aboutPic}
+            src={urlFor(pageInfo?.profileImg).url()}
             alt="My Image"
             width={700}
             height={700}
@@ -46,15 +50,7 @@ export default function About({}: Props) {
             A <span className="underline decoration-green-800">bit</span> about
             myself
           </h4>
-          <p className="text-base">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
-            suscipit nostrum fuga ex, explicabo cumque quam hic facilis quisquam
-            repellat dolorem neque? Reprehenderit voluptas eligendi quod aut
-            culpa, perferendis atque? Quia nulla vel ipsam aut illum non
-            temporibus voluptas placeat, dicta delectus similique praesentium
-            inventore consequatur ducimus ex fugiat quisquam repellat minus enim
-            a dignissimos eius repudiandae magni? Aliquam, commodi.
-          </p>
+          <p className="text-base">{pageInfo.backgroundInfo}</p>
         </div>
       </div>
     </motion.div>
