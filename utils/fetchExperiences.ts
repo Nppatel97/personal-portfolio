@@ -3,7 +3,7 @@ import { Experience } from "../typings";
 const dev = process.env.NODE_ENV !== "production";
 export const server = dev
   ? "http://localhost:3000"
-  : "https://nisargppatel.com";
+  : "https://personal-portfolio-two-steel.vercel.app/";
 
 export const fetchExperiences = async () => {
   const res = await fetch(`${server}/api/getExperiences`);
