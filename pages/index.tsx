@@ -6,10 +6,15 @@ import Hero from "../components/Hero";
 import Skills from "../components/Skills";
 import Projects from "../components/Projects";
 import ContactMe from "../components/ContactMe";
+// import { Roboto } from "@next/font/google";
+
+// const roboto = Roboto({ weight: "400" });
 
 export default function Home() {
   return (
-    <div className="bg-zinc-800 text-white h-screen snap-y snap-mandatory overflow-scroll z-0">
+    <div
+      className={`bg-zinc-800 text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar-thin scrollbar-track-transparent scrollbar-thumb-green-800`}
+    >
       <Head>
         <title>Nisarg Patel</title>
         <link rel="icon" href="/npLogo.png" />
@@ -47,6 +52,9 @@ export default function Home() {
       <section id="contact" className="snap-start">
         <ContactMe />
       </section>
+
+      {/* Footer */}
+      <footer></footer>
     </div>
   );
 }

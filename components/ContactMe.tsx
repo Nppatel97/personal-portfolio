@@ -26,12 +26,12 @@ function ContactMe({}: Props) {
       <h3 className="sticky top-0 left-0 py-8 w-full bg-zinc-800 uppercase tracking-[20px] text-gray-500 text-2xl">
         Contact
       </h3>
-      <div className="flex flex-col space-y-10">
+      <div className="flex flex-col space-y-10 px-5">
         <h4 className="font-light text-2xl text-center">
           Looking for a professional Developer? Your search ends here.{" "}
           <span className="underline decoration-green-800/80">Let's Talk.</span>
         </h4>
-        <div className="space-y-10">
+        <div className="space-y-5">
           <div className="flex items-center space-x-5 justify-center">
             <AiOutlinePhone className="w-7 h-7 text-green-800 animate-pulse" />
             <p className="text-xl">+1 437-981-0755</p>

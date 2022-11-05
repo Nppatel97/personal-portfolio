@@ -2,6 +2,7 @@ import React from "react";
 import { SiLinkedin } from "react-icons/si";
 import { HiOutlineMail } from "react-icons/hi";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 type Props = {};
 
@@ -28,25 +29,27 @@ export default function Header({}: Props) {
         <SiLinkedin />
         <SiLinkedin />
       </motion.div>
-      <motion.div
-        initial={{
-          x: 500,
-          opacity: 0,
-          scale: 0.5,
-        }}
-        animate={{
-          x: 0,
-          opacity: 1,
-          scale: 1,
-        }}
-        transition={{
-          duration: 0.7,
-        }}
-        className="flex  items-center text-gray-400 cursor-pointer p-5"
-      >
-        <HiOutlineMail className="socialIcons" />
-        <p className="uppercase hidden md:inline-flex">Get In Touch</p>
-      </motion.div>
+      <Link href={"#contact"}>
+        <motion.div
+          initial={{
+            x: 500,
+            opacity: 0,
+            scale: 0.5,
+          }}
+          animate={{
+            x: 0,
+            opacity: 1,
+            scale: 1,
+          }}
+          transition={{
+            duration: 0.7,
+          }}
+          className="flex  items-center text-gray-400 cursor-pointer p-5"
+        >
+          <HiOutlineMail className="socialIcons" />
+          <p className="uppercase hidden md:inline-flex">Get In Touch</p>
+        </motion.div>
+      </Link>
     </header>
   );
 }
