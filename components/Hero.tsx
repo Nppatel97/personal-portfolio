@@ -9,13 +9,9 @@ import { urlFor } from "../sanity";
 type Props = { pageInfo: PageInfo };
 
 export default function Hero({ pageInfo }: Props) {
-  const myLoader = () => {
-    return `https://photos.app.goo.gl/c57REfpfc7M7EX2b9`;
-  };
   const [text, count] = useTypewriter({
     words: [
       `Hello! I'm ${pageInfo?.name}`,
-      `ProfileImg ${pageInfo?.profileImg}`,
       "Full-Stack-Developer.js",
       "♪ Music Lover",
       "#LifeLongLearner",
