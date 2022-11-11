@@ -11,8 +11,8 @@ type Props = { pageInfo: PageInfo };
 export default function Hero({ pageInfo }: Props) {
   const [text, count] = useTypewriter({
     words: [
-      `Hello! I'm ${pageInfo?.name}`,
-      "Full-Stack-Developer.js",
+      `Hi! I'm ${pageInfo?.name}`,
+      "Full-Stack-Dev.js",
       "♪ Music Lover",
       "#LifeLongLearner",
     ],
@@ -30,15 +30,15 @@ export default function Hero({ pageInfo }: Props) {
           width={500}
           height={500}
         />
-        <div>
+        <div className="overflow-visible w-screen px-5">
           <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[12px]">
             {pageInfo?.role}
           </h2>
-          <h1 className="text-5xl lg:6xl font-semibold px-10">
+          <h1 className="text-3xl md:text-5xl lg:6xl font-semibold px-10">
             <span className="mr-3">{text}</span>
             <Cursor />
           </h1>
-          <div>
+          <div className="grid grid-cols-2 md:inline">
             <Link href="#experience">
               <button className="heroBtn">Experience</button>
             </Link>

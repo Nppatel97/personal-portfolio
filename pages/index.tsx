@@ -13,6 +13,8 @@ import { fetchExperiences } from "../utils/fetchExperiences";
 import { fetchProjects } from "../utils/fetchProjects";
 import { fetchSkills } from "../utils/fetchSkills";
 import { fetchSocials } from "../utils/fetchSocials";
+import { GoArrowUp } from "react-icons/go";
+import Link from "next/link";
 // import { Roboto } from "@next/font/google";
 
 // const roboto = Roboto({ weight: "400" });
@@ -34,7 +36,7 @@ export default function Home({
 }: Props) {
   return (
     <div
-      className={`bg-zinc-800 text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar-thin scrollbar-track-transparent scrollbar-thumb-green-800`}
+      className={`bg-zinc-800 text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-transparent scrollbar-thumb-green-800`}
     >
       <Head>
         <title>Nisarg Patel</title>
@@ -75,7 +77,14 @@ export default function Home({
       </section>
 
       {/* Footer */}
-      <footer></footer>
+      <footer className="bg-black mt-5 py-5 px-3 text-white flex items-center justify-between snap-start font-light">
+        <b className="px-5">Nisarg Patel</b>
+        <Link href={"#"}>
+          <b className="flex space-x-2 items-center px-5">
+            To Top <GoArrowUp />
+          </b>
+        </Link>
+      </footer>
     </div>
   );
 }

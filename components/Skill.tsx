@@ -1,7 +1,7 @@
 import { motion, MotionConfig } from "framer-motion";
 import Image from "next/image";
 import React from "react";
-import Sanity from "../public/sanityLogo.webp";
+// import Sanity from "../public/sanityLogo.webp";
 
 type Props = {
   title: string;
@@ -12,19 +12,7 @@ type Props = {
 function Skill({ title, image, directionLeft }: Props) {
   return (
     <div className="group relative flex cursor-pointer">
-      <motion.div
-        initial={{
-          x: directionLeft ? -100 : 100,
-          opacity: 0,
-        }}
-        transition={{
-          duration: 0.7,
-        }}
-        whileInView={{
-          opacity: 1,
-          x: 0,
-        }}
-      >
+      <motion.div>
         <Image
           src={image}
           alt="SanityLogo"

@@ -10,6 +10,7 @@ export const fetchProjects = async () => {
     `${process.env.NEXT_PUBLIC_BASE_URL}/api/getProjects`
   );
   const data = await res.json();
+  console.log(data.projects);
   const projects: Project[] = data.projects;
   console.log(projects);
   return projects;

@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
 import React from "react";
-import meImg from "../public/me.jpg";
+// import meImg from "../public/me.jpg";
 import Image from "next/image";
 import { Project } from "../typings";
 import { urlFor } from "../sanity";
+import Link from "next/link";
 
 type Props = {
   projects: Project[];
@@ -11,15 +12,15 @@ type Props = {
 
 export default function Projects({ projects }: Props) {
   return (
-    <div className="h-screen relative  flex overflow-hidden  flex-col text-left md:flex-row max-w-full justify-evenly mx-auto items-center z-0 ">
-      <h3 className="absolute top-20 uppercase tracking-[20px] text-gray-500 text-2xl">
+    <div className="h-screen relative  flex overflow-hidden  flex-col text-left md:flex-row max-w-full justify-evenly mx-auto items-center z-0">
+      <h3 className="sticky top-0 py-5 uppercase tracking-[20px] text-gray-500 text-2xl bg-zinc-800 z-50">
         Projects
       </h3>
-      <div className="relative flex w-full overflow-x-scroll overflow-y-hidden snap-mandatory snap-x z-20 scrollbar-thin scrollbar-track-zinc-400 scrollbar-thumb-green-800">
+      <div className="relative flex w-full overflow-x-scroll overflow-y-hidden snap-mandatory snap-x z-20 customScrollbar">
         {projects.map((project, i) => (
           <div
             key={project._id}
-            className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen"
+            className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-start py-0 px-10 md:p-44 h-screen"
           >
             <motion.div
               initial={{
@@ -32,22 +33,39 @@ export default function Projects({ projects }: Props) {
             >
               <Image
                 key={project._id}
-                src={meImg}
-                alt="Spotify Clone Image"
+                src={urlFor(project.projectImg).url()}
+                alt={project.title}
                 width={500}
                 height={500}
-                className="overflow w-36 h-auto"
+                className="overflow w-64 h-auto"
               />
             </motion.div>
-
-            <div className="space-y-10 px-0 md:px-10 max-w-6xl">
-              <h4 className="text-2xl font-light text-center">
-                <span className="font-semibold ">
-                  Case Study {i + 1} of {projects.length}:
-                </span>{" "}
-                {project.summary.split(".")[0]}
-              </h4>
-              <div className="flex items-center justify-center space-x-3">
+            <h4 className="text-2xl font-light text-center">
+              <span className="font-semibold ">
+                Case Study {i + 1} of {projects.length}:
+              </span>{" "}
+              <p>{project?.title}</p>
+            </h4>
+            <div className="space-y-10 px-5 pb-32 md:px-10 max-w-6xl overflow-y-scroll customScrollbar">
+              <div className="text-base text-center">
+                <Link href={project.linkToGithub}>
+                  <p>
+                    {" "}
+                    <b className="font-semibold">GitHub Repo: </b>
+                    <br />
+                    {project?.linkToGithub}
+                  </p>
+                </Link>
+                <Link href={project?.linkToBuild}>
+                  <p className="text-base">
+                    {" "}
+                    <b className="font-semibold">Live Demo:</b>
+                    <br />
+                    {project?.linkToBuild}
+                  </p>
+                </Link>
+              </div>
+              <div className="flex items-center py-4 justify-start space-x-3 overflow-x-scroll customScrollbar">
                 {project.technologies.map((tech) => (
                   <Image
                     key={tech._id}

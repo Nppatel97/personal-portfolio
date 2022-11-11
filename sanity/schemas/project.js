@@ -1,17 +1,17 @@
 export default {
   name: "project",
-  title: "Project",
+  title: "Projects",
   type: "document",
   fields: [
     {
-      name: "Title",
+      name: "title",
       title: "Title",
       description: "Title of the project",
-      type: "text",
+      type: "string",
     },
     {
-      name: "profileImg",
-      title: "Profile Pic",
+      name: "projectImg",
+      title: "Project Image",
       type: "image",
       options: {
         hotspot: true,
@@ -31,6 +31,11 @@ export default {
     {
       name: "linkToBuild",
       title: "Live Demo URL",
+      type: "url",
+    },
+    {
+      name: "linkToGithub",
+      title: "GitHub Repo",
       type: "url",
     },
   ],

@@ -16,13 +16,10 @@ function Skills({ skills }: Props) {
       transition={{ duration: 0.7 }}
       className="h-screen flex relative text-center md:text-left xl:flex-row mx-w-[2000px] xl:px-10 min-h-screen justify-center xl:space-y-0 mx-auto items-center"
     >
-      <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">
+      <h3 className="absolute top-0 py-5 uppercase tracking-[20px] text-gray-500 text-2xl bg-zinc-800">
         Skills
       </h3>
-      <h3 className="absolute top-36 uppercase tracking-[3px] text-gray-500 text-sm">
-        Hover over
-      </h3>
-      <div className="grid grid-cols-3 md:grid-cols-4 gap-5 mt-20">
+      <div className="grid grid-cols-3 md:grid-cols-4 gap-5 mt-10 h-4/5 overflow-y-scroll customScrollbar px-5">
         {skills?.slice(0, skills.length / 2).map((skill) => (
           <Skill
             key={skill._id}

@@ -15,13 +15,13 @@ export default function About({ pageInfo }: Props) {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.7 }}
-      className="flex flex-col relative h-screen text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center"
+      className="flex flex-col relative h-screen text-center md:text-left md:flex-row max-w-7xl px-0 justify-evenly mx-auto items-center"
     >
-      <h3 className="absolute top-20 uppercase tracking-[20px] text-gray-500 text-2xl">
+      <h3 className="absolute top-0 py-5 bg-zinc-800 uppercase tracking-[20px] text-gray-500 text-2xl">
         About
       </h3>
 
-      <div className="grid grid-rows-2 grid-cols-1 md:grid-rows-1 md:grid-cols-3 md:gap-0 items-center">
+      <div className="flex flex-col mt-28 md:grid-rows-1 md:grid-cols-3 md:gap-0 items-center">
         <motion.div
           className="mt-12 md:mt-0 mx-auto md:mx-0"
           initial={{
@@ -45,7 +45,7 @@ export default function About({ pageInfo }: Props) {
           />
         </motion.div>
 
-        <div className="col-span-2 space-y-6 px-0 md:px-10">
+        <div className="col-span-2 space-y-6 px-5 md:px-10 h-2/4 overflow-y-scroll customScrollbar">
           <h4 className="text-4xl font-semibold">
             A <span className="underline decoration-green-800">bit</span> about
             myself

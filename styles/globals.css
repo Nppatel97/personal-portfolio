@@ -12,6 +12,10 @@
   }
 
   .contactInput {
-    @apply outline-none bg-zinc-500/10 rounded-t-md border-b border-green-800/50 text-gray-400 placeholder-gray-600 px-5 py-3 transition-all focus:border-green-600 focus:text-white hover:border-green-600;
+    @apply m-2 outline-none bg-zinc-500/10 rounded-t-md border-b border-green-800/50 text-gray-400 placeholder-gray-600 px-5 py-3 transition-all focus:border-green-600 focus:text-white hover:border-green-600;
+  }
+
+  .customScrollbar {
+    @apply scrollbar-thin scrollbar-track-zinc-400 scrollbar-thumb-green-800;
   }
 }
